@@ -1,7 +1,8 @@
 import json
 from aiohttp import web
 import logging
-from lib.config import rclonedir
+from lib.config import rclonedir,blrecdir
+from lib.file_edit import subdir_get
 import lib.rclone as rclone 
 
 logger = logging.getLogger(__name__)
@@ -31,12 +32,14 @@ async def handle_webhook(request):
                  # 遍历文件列表并上传每个文件
                 for file in files:
                     # 拼接文件路径
-                    file_path = file
-                    # 拼接云存储路径
-                    cloudbin_path = (f"{rclonedir}{room_id}")
+                    full_file_path = file
+                    # 提取路径 
+                    sub_dir = subdir_get(full_file_path, blrecdir)
+                    # 拼接云存储路径 将路径补充到
+                    cloudbin_path = (f"{rclonedir}{sub_dir}")
                     logger.debug(f"文件 {file} 将上传到{cloudbin_path}")
                     # 上传文件
-                    await rclone.upload_file(file_path, cloudbin_path)
+                    await rclone.upload_file(full_file_path, cloudbin_path)
                     
 
             case "LiveBeganEvent": 
