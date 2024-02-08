@@ -40,15 +40,15 @@ async def handle_webhook(request):
                 # 提取子路径
                 sub_dir = subdir_get(full_file_path, rechimedir)
                 # 拼接云端路径
-                cloudbin = (rclonedir, sub_dir)
+                cloudbin = (f"{rclonedir}{sub_dir}")
 
-                if os.path.exists(relative_path): 
+                if os.path.exists(full_file_path): 
                     # 处理变量 
-                    logger.info(f"获取到{username}关闭文件，尝试上传{relative_path}")
+                    logger.info(f"获取到{username}关闭文件，尝试上传{full_file_path}")
                 # 执行命令
                     await rclone.upload_file(full_file_path, cloudbin)
                 else:
-                    logger.error(f"文件:{relative_path}不存在，无法执行命令",exc_info=True)
+                    logger.error(f"文件:{full_file_path}不存在，无法执行命令",exc_info=True)
     except Exception as e:
         logging.error(f"处理录播姬事件发生错误：{e}")
 
