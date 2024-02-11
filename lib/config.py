@@ -1,4 +1,8 @@
 
+# 接收webhook的host设置
+host = "0.0.0.0"
+port = "10801"
+
 # 由于录播姬的webhook输出的是相对路径，需要补充工作路径
 rechimedir = "/home/patch/record/rechime"
 
