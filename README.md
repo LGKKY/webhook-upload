@@ -9,16 +9,16 @@
   - [x] 录播姬webhook支持
   - [x] blrec webhook支持
   - [ ] 更多待添加
-- [ ] bililogin支持
-    - [ ] 检查cookie有效性,自动刷新cookie
-    - [ ] 同步更改blrec的设置
-    - [ ] 同步更改录播姬的设置
+- [x] bililogin支持
+    - [x] 检查cookie有效性,自动刷新cookie
+    - [x] 同步更改blrec的设置
+    - [x] 同步更改录播姬的设置
 - [ ] 文件相关
     - [x] rclone支持
     - [ ] alist支持
-    - [ ] Cloudreve支持
-- [ ] 程序相关
-    - [ ] 支持toml配置文件
+    - [ ] 
+- [x] 程序相关
+    - [x] 支持toml配置文件
     - [ ] 支持web页面设置,任务状态监视
     - [ ] 自动清理服务端存储空间，flv文件转换mp4
     - [ ] 程序故障自动报告

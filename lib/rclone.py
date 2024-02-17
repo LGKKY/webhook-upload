@@ -1,16 +1,18 @@
 import asyncio
 import logging
-from lib.config import rcmode, rcconf,rclone
-
-
+from tomlkit import parse
 
 logger = logging.getLogger(__name__)
+
+with open("lib/config.toml", 'r', encoding='utf-8') as f:
+    config = parse(f.read())["rclone"].unwrap()
+
 
 async def upload_file(upload: str, cloudbin: str):
     logger.info(f"尝试上传 {upload}")
     try:
         # 创建上传命令
-        upload_args = [f"{rclone}", "--config", rcconf, rcmode, f"{upload}",f"{cloudbin}"]
+        upload_args = [f"{config['rclone']}", "--config", config['conf'], config['mode'], f"{upload}", f"{cloudbin}"]
         logger.debug(f"{upload_args}")
 
         # 执行命令
