@@ -7,3 +7,5 @@ lib/__pycache__/file_edit.cpython-310.pyc
 
 .gitignore
 info.txt
+lib/config.toml
+lib/config.toml

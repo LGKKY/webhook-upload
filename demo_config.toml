@@ -1,0 +1,20 @@
+[server]
+host = "127.0.0.1"
+port = 10801
+
+[rechime]
+dir = "/home/patch/record/rechime"
+port = 2356
+
+[blrec]
+dir = "/home/patch/record/blrec"
+port = 2233
+
+[rclone]
+dir = "remote:path"
+mode = "move"
+conf = "rclone/rclone.conf"
+rclone = "rclone.exe"
+
+[cookie_refresh]
+check_time = "05:00"

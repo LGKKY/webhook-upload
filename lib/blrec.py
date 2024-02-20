@@ -35,7 +35,7 @@ async def handle_webhook(request):
                     full_file_path = file
                     # 提取路径 
                     sub_dir = subdir_get(full_file_path, blrecdir)
-                    # 拼接云存储路径 将路径补充到
+                    # 拼接云存储路径 将路径补充到云端
                     cloudbin_path = f"{rclonedir}{sub_dir}"
                     logger.debug(f"文件 {file} 将上传到{cloudbin_path}")
                     # 上传文件
