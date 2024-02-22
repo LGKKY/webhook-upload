@@ -16,9 +16,9 @@ port = 2233
 # rclone上传目录 
 dir = "remote:path"
 # rclone的上传模式 默认为move(剪切),默认情况下上传失败不会删除源文件
-rcmode = "move"
+mode = "move"
 # 请在下面填写rclone的配置文件路径
-rcconf = "/rclone/rclone.conf"
+conf = "/rclone/rclone.conf"
 # 以下填写rclone主程序路径/shell命令
 rclone = "rclone.exe"
 
