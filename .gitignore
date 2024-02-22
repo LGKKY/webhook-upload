@@ -1,11 +1,3 @@
-lib/__pycache__/blrec.cpython-310.pyc
-lib/__pycache__/config.cpython-310.pyc
-lib/__pycache__/rclone.cpython-310.pyc
-lib/__pycache__/rechime.cpython-310.pyc
-lib/__pycache__/bililogin.cpython-310.pyc
-lib/__pycache__/file_edit.cpython-310.pyc
-
-.gitignore
+lib/__pycache__/
 info.txt
-lib/config.toml
 lib/config.toml
